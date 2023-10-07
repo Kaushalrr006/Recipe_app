@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block start %}
+<br>
+
+<div class="container mt-5"> 
+
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" >
+        {% csrf_token %}
+       
+        <h2> Register </h2>
+        {% if messages %}
+        {{ message.tags }}
+        <div class="alert alert-primary" role="alert">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+           
+
+        <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">First name</label>
+        <input type="text" class="form-control" name="first_name" id="formGroupExampleInput" >
+        </div>
+        <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Last name</label>
+        <input type="text" class="form-control" name="last_name" id="formGroupExampleInput" >
+        </div>
+        <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" id="formGroupExampleInput" >
+        </div>
+        <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="exampleInputPassword1" >
+        </div>
+        
+        <p> Already have an account?  <a href="/login/"> Login</p>
+
+        <button type="submit" class="btn btn-success ">Submit</button>
+    </form>
+
+<div>
+
+
+
+
+
+
+</div>
+
+
+
+{% endblock %}
